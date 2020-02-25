@@ -1,3 +1,11 @@
+### Day-2
+
+- 폴더구성 - [akveo/kittenTricks](https://github.com/akveo/kittenTricks)
+- app
+- navigation
+
+---
+
 ### Day-1
 
 - 프로젝트 생성
