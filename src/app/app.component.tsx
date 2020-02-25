@@ -15,20 +15,20 @@ import {
   Button,
   Icon,
   IconRegistry,
-  Layout,
   Text,
+  Layout,
 } from '@ui-kitten/components';
 import {EvaIconsPack} from '@ui-kitten/eva-icons';
 import React from 'react';
 import {ImageProps, ImageStyle, StyleSheet} from 'react-native';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {AppearanceProvider} from 'react-native-appearance';
+import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 import {SplashImage} from '../component/splash-image.component';
 import {StatusBar} from '../component/status-bar.component';
 import {AppStorage} from '../serivce/app-storage.service';
 import {Mapping, Theme, Theming} from '../serivce/theme.service';
 import {AppLoading, Task} from './app-loading.component';
 import {appMappings, appThemes} from './app-theming';
-import {AppearanceProvider} from 'react-native-appearance';
 /**
  * Use any valid `name` property from eva icons (e.g `github`, or `heart-outline`)
  * https://akveo.github.io/eva-icons
@@ -38,8 +38,6 @@ const HeartIcon = (style: ImageStyle): React.ReactElement<ImageProps> => (
 );
 
 const loadingTasks: Task[] = [
-  // Should be used it when running Expo.
-  // In Bare RN Project this is configured by react-native.config.js
   () =>
     AppStorage.getMapping(defaultConfig.mapping).then(result => [
       'mapping',
@@ -52,6 +50,34 @@ const loadingTasks: Task[] = [
 const defaultConfig: {mapping: Mapping; theme: Theme} = {
   mapping: 'eva',
   theme: 'light',
+};
+
+const Wellcome = ({safeArea = false}) => {
+  const renderContent = () => (
+    <>
+      <Text style={[styles.text, styles.red]} category="h1">
+        Welcome to UI Kitten 😻
+      </Text>
+      <Text style={styles.text} category="s1">
+        Start with editing App.js to configure your App
+      </Text>
+      <Text style={styles.text} appearance="hint">
+        For example, try changing theme to Dark by simply changing an import
+      </Text>
+      <Button style={styles.likeButton} icon={HeartIcon}>
+        LIKE
+      </Button>
+    </>
+  );
+  if (safeArea) {
+    return <SafeAreaView>{renderContent()}</SafeAreaView>;
+    // return (
+    //   <SafeAreaView>
+    //     <Layout style={styles.container}>{renderContent()}</Layout>
+    //   </SafeAreaView>
+    // );
+  }
+  return <Layout style={styles.container}>{renderContent()}</Layout>;
 };
 
 const App = ({mapping, theme}): React.ReactElement => {
@@ -73,22 +99,7 @@ const App = ({mapping, theme}): React.ReactElement => {
           <Theming.MappingContext.Provider value={mappingContext}>
             <Theming.ThemeContext.Provider value={themeContext}>
               <SafeAreaProvider>
-                <StatusBar />
-                <Layout style={styles.container}>
-                  <Text style={styles.text} category="h1">
-                    Welcome to UI Kitten 😻
-                  </Text>
-                  <Text style={styles.text} category="s1">
-                    Start with editing App.js to configure your App
-                  </Text>
-                  <Text style={styles.text} appearance="hint">
-                    For example, try changing theme to Dark by simply changing
-                    an import
-                  </Text>
-                  <Button style={styles.likeButton} icon={HeartIcon}>
-                    LIKE
-                  </Button>
-                </Layout>
+                <Wellcome />
               </SafeAreaProvider>
             </Theming.ThemeContext.Provider>
           </Theming.MappingContext.Provider>
@@ -99,9 +110,12 @@ const App = ({mapping, theme}): React.ReactElement => {
 };
 
 const styles = StyleSheet.create({
+  red: {
+    backgroundColor: '#f00',
+  },
   container: {
     flex: 1,
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     alignItems: 'center',
   },
   text: {
