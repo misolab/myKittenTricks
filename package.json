@@ -7,7 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "postinstall": "react-native link"
+    "rn-link": "react-native link"
   },
   "dependencies": {
     "@eva-design/eva": "^1.4.0",
