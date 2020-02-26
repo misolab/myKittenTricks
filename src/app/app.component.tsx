@@ -29,6 +29,7 @@ import {AppStorage} from '../serivce/app-storage.service';
 import {Mapping, Theme, Theming} from '../serivce/theme.service';
 import {AppLoading, Task} from './app-loading.component';
 import {appMappings, appThemes} from './app-theming';
+import {AppNavigator} from '../navigation/app.navigator';
 /**
  * Use any valid `name` property from eva icons (e.g `github`, or `heart-outline`)
  * https://akveo.github.io/eva-icons
@@ -99,7 +100,7 @@ const App = ({mapping, theme}): React.ReactElement => {
           <Theming.MappingContext.Provider value={mappingContext}>
             <Theming.ThemeContext.Provider value={themeContext}>
               <SafeAreaProvider>
-                <Wellcome />
+                <AppNavigator />
               </SafeAreaProvider>
             </Theming.ThemeContext.Provider>
           </Theming.MappingContext.Provider>
