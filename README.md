@@ -1,13 +1,20 @@
-### Day-2
+### Day-3
 
-- tsconfig.json
-- 폴더구성 - [akveo/kittenTricks](https://github.com/akveo/kittenTricks)
-- app
 - navigation
 
 ---
 
+### Day-2
+
+- tsconfig.json
+- 폴더구성
+- app
+
+---
+
 ### Day-1
+
+- [akveo/kittenTricks](https://github.com/akveo/kittenTricks)
 
 - 프로젝트 생성
 
