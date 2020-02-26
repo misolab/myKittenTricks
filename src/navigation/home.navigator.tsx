@@ -27,7 +27,7 @@ const TabBarVisibleOnRootScreenOptions = ({
   return {tabBarVisible: currentRoute && isOneOfRootRoutes(currentRoute)};
 };
 
-const HomeTabsNavigator = (): React.ReactElement => (
+export const HomeTabsNavigator = (): React.ReactElement => (
   <BottomTab.Navigator
     screenOptions={TabBarVisibleOnRootScreenOptions}
     initialRouteName={initialTabRoute}

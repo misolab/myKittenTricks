@@ -1,12 +1,12 @@
 import React from 'react';
-import {SafeAreaLayout} from '../../component/safe-area-layout.component';
 import {StyleSheet} from 'react-native';
-import {Text} from '@ui-kitten/components';
+import {SafeAreaLayout} from '../../component/safe-area-layout.component';
+import Wellcome from '../../wellcome';
 
 const LibrariesScreen = ({navigation}): React.ReactElement => {
   return (
     <SafeAreaLayout style={styles.safeArea} insets="top">
-      <Text>TODO : LibrariesScreen</Text>
+      <Wellcome name="LibrariesScreen" />
     </SafeAreaLayout>
   );
 };
