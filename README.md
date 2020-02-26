@@ -1,6 +1,7 @@
 ### Day-3
 
 - navigation
+- icons
 
 ---
 

@@ -10,11 +10,16 @@ interface WellcomeProps {
   name?: string;
 }
 const Wellcome = ({name = 'Wellcome'}: WellcomeProps) => {
+  const EvaIcon = ({name, size, fill}) => (
+    <Icon name={name} width={size} height={size} fill={fill} />
+  );
   return (
     <Layout style={styles.container}>
       <Text style={[styles.text, styles.red]} category="h1">
         {name} 😻
       </Text>
+      <Icon pack="app" name="auth" />
+      <EvaIcon name="facebook" size={100} fill="#3366FF" />
       <Text style={styles.text} category="s1">
         Start with editing App.js to configure your App
       </Text>
