@@ -1,6 +1,6 @@
+import {styled, StyledComponentProps} from '@ui-kitten/components';
 import React from 'react';
-import {ViewProps, FlexStyle, View} from 'react-native';
-import {StyledComponentProps, styled} from '@ui-kitten/components';
+import {FlexStyle, View, ViewProps} from 'react-native';
 import {EdgeInsets, SafeAreaConsumer} from 'react-native-safe-area-context';
 
 interface InsetProvider {
@@ -17,7 +17,7 @@ const INSETS: Record<string, InsetProvider> = {
   bottom: {
     toStyle: (insets: EdgeInsets, styles): FlexStyle => ({
       ...styles,
-      paddingTop: insets.bottom,
+      paddingBottom: insets.bottom,
     }),
   },
 };
@@ -30,7 +30,7 @@ export interface SafeAreaLayoutProps extends ViewProps, StyledComponentProps {
 }
 
 class SafeAreaLayoutComponent extends React.Component<SafeAreaLayoutProps> {
-  static styleComponentName = 'SafeAreaLayout';
+  static styledComponentName = 'SafeAreaLayout';
 
   public render(): React.ReactElement<ViewProps> {
     return <SafeAreaConsumer>{this.renderComponent}</SafeAreaConsumer>;
