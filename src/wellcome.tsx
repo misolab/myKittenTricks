@@ -8,8 +8,9 @@ const HeartIcon = (style: ImageStyle): React.ReactElement<ImageProps> => (
 
 interface WellcomeProps {
   name?: string;
+  onTap?: () => void;
 }
-const Wellcome = ({name = 'Wellcome'}: WellcomeProps) => {
+const Wellcome = ({name = 'Wellcome', onTap}: WellcomeProps) => {
   const EvaIcon = ({name, size, fill}) => (
     <Icon name={name} width={size} height={size} fill={fill} />
   );
@@ -26,7 +27,7 @@ const Wellcome = ({name = 'Wellcome'}: WellcomeProps) => {
       <Text style={styles.text} appearance="hint">
         For example, try changing theme to Dark by simply changing an import
       </Text>
-      <Button style={styles.likeButton} icon={HeartIcon}>
+      <Button style={styles.likeButton} icon={HeartIcon} onPress={onTap}>
         LIKE
       </Button>
     </Layout>

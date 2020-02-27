@@ -6,7 +6,10 @@ import Wellcome from '../../wellcome';
 const LibrariesScreen = ({navigation}): React.ReactElement => {
   return (
     <SafeAreaLayout style={styles.safeArea} insets="top">
-      <Wellcome name="LibrariesScreen" />
+      <Wellcome
+        name="LibrariesScreen"
+        onTap={() => navigation.navigate('Home')}
+      />
     </SafeAreaLayout>
   );
 };

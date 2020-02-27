@@ -5,11 +5,10 @@ import {
 } from '@ui-kitten/components';
 import React from 'react';
 import {StyleSheet} from 'react-native';
+import {MenuIcon} from '../../component/icons';
 import MenuGridList from '../../component/menu-grid-list.component';
 import {SafeAreaLayout} from '../../component/safe-area-layout.component';
-import Wellcome from '../../wellcome';
 import {data} from './data';
-import {MenuIcon} from '../../component/icons';
 
 const LayoutsScreen = (props): React.ReactElement => {
   const onItemPress = (index: number) => {
