@@ -10,6 +10,7 @@ import HomeDrawer from '../scene/home/home-drawer.component';
 import LibrariesScreen from '../scene/libraries/libraries.component';
 import LayoutsNavigator from './layouts.navigation';
 import {ThemeNavigator} from './themes.navigator';
+import ComponentsNavigator from './components.navigator';
 
 const BottomTab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
@@ -34,8 +35,7 @@ export const HomeTabsNavigator = (): React.ReactElement => (
     initialRouteName={initialTabRoute}
     tabBar={props => <HomeBottomNavigation {...props} />}>
     <BottomTab.Screen name="Layouts" component={LayoutsNavigator} />
-
-    <BottomTab.Screen name="Components" component={LayoutsNavigator} />
+    <BottomTab.Screen name="Components" component={ComponentsNavigator} />
     <BottomTab.Screen name="Themes" component={ThemeNavigator} />
   </BottomTab.Navigator>
 );
