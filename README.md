@@ -1,3 +1,23 @@
+### Day-7
+
+- Layouts / Auth
+  - component
+    - layout-grid-list.component
+    - layout-list.component
+  - model
+    - layout-item.model
+  - navigation
+    - auth.navigator
+    - layouts.navigation
+  - scene
+    - auth
+      - auth-grid.component
+      - auth-list.component
+      - auth.component
+      - data
+
+---
+
 ### Day-6
 
 - Components / Button
