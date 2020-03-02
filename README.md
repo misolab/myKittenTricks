@@ -1,3 +1,15 @@
+### Day-6
+
+- Components / Button
+
+---
+
+### Day-5
+
+- Themes
+
+---
+
 https://velog.io/@misolab/KittenTricks-분석1
 
 ### Day-4
